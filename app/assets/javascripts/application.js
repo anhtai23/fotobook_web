@@ -15,31 +15,24 @@
 //= require popper
 //= require bootstrap
 //= require rails-ujs
-//= require main
 //= require jquery.fancybox.min
 //= require aos
+//= require main
+//= require addform
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-
-
 function readURL(input) {
   if (input.files && input.files[0]) {
-
     var reader = new FileReader();
-
     reader.onload = function(e) {
       $('.image-upload-wrap').hide();
-
       $('.file-upload-image').attr('src', e.target.result);
       $('.file-upload-content').show();
-
       $('.image-title').html(input.files[0].name);
     };
-
     reader.readAsDataURL(input.files[0]);
-
   } else {
     removeUpload();
   }
@@ -57,38 +50,22 @@ $('.image-upload-wrap').bind('dragover', function () {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
 
-
 $(document).ready(function() {
-
-// Gets the video src from the data-src on each button
+debugger// Gets the video src from the data-src on each button
 var $imageSrc;
 $('.gallery img').click(function() {
     $imageSrc = $(this).data('bigimage');
 });
-// console.log($imageSrc);
-
-
-
 // when the modal is opened autoplay it
 $('#my-modal').on('shown.bs.modal', function (e) {
-
 // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-
 $("#image").attr('src', $imageSrc  );
 })
-
-
 // reset the modal image
 $('#my-modal').on('hide.bs.modal', function (e) {
     // a poor man's stop video
     $("#image").attr('src','');
 })
-
-
-
-
-
-
 // document ready
 });
 

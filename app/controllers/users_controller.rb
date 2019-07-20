@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
     @photos = Photo.all
-
   end
 
   def edit
@@ -20,13 +19,12 @@ class UsersController < ApplicationController
   end
 
   private
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :website,:bio, :email, :phone, :gender, :avatars)
+    end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :website,:bio, :email, :phone, :gender, :avatars)
-  end
-
-  def update_basic_params
-    params.require(:user).permit(:first_name,:avatars,:last_name,:email)
-  end
+    def update_basic_params
+      params.require(:user).permit(:first_name,:avatars,:last_name,:email)
+    end
 
 end

@@ -1,13 +1,12 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album
 
   def index
     @photo = Photo.all
   end
-  def show
 
-    @album = Album.find(params[:id])
-    @album_photos = @album.photos.all
+  def show
+    @album_photos = @album.photos
   end
 
   def new
@@ -17,23 +16,19 @@ class AlbumsController < ApplicationController
 
   def edit
     @album_photo = @album.photos.build
-
   end
 
   def create
     @album = Album.new(album_params)
-
     if @album.save
       params[:photos]['image'].each do |a|
         @album_photo = @album.photos.create!(:image => a)
       end
       flash[:notice]= 'album was successfully created.'
       redirect_to root_path
-
     else
       render 'new'
     end
-
   end
 
   def update
@@ -55,7 +50,6 @@ class AlbumsController < ApplicationController
      format.html { redirect_to Albums_urAlbumotice: 'album was successfully destroyed.' }
     end
   end
-
 
   private
   def set_album

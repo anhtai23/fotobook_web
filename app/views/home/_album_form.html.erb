@@ -1,4 +1,4 @@
-<%= form_for @album,html:{ multipart: true } , url: albums_path, remote: true  do |f| %>
+<%= form_for @album,html:{ multipart: true } , url: user_albums_path(@user), remote: true  do |f| %>
   <div class="form-group">
     <%= f.label :Title%>
     <%= f.text_field :title %>

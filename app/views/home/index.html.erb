@@ -2,7 +2,7 @@
   <div class="tab-main">
     <ul id="my-tab" class="nav nav-tabs nav-pills">
       <li class="nav-item">
-        <a data-toggle="tab" class="nav-link fa fa-picture-o active" href="#profile"> Photos</a>
+        <a data-toggle="tab" data-turbolinks="false"  class="nav-link fa fa-picture-o active" href="#profile"> Photos</a>
       </li>
       <li class="nav-item">
         <a data-toggle="tab" class="nav-link fa fa-file-image-o material-icons" href="#new"> Albums</a>
@@ -13,19 +13,20 @@
     </ul>
   </div>
   <div class="tab-content my-padding">
-      <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
     <div id="profile" class="tab-pane fade active show" role="tabpanel">
-      <a id="addphoto"><button type="button" class="float-right btn btn-success " >Add photo</button></a>
+    <a id="add-photo"> <button type="button" class="float-right btn btn-success" >Add photo</button></a> 
       <%= render partial: "components/photo"%>
       <%= render partial: "photos/show"%>
     </div>
-  </div>
     <div id="new" class="tab-pane fade in" role="tabpanel">
+      <a id="add-album"> <button type="button" class="float-right btn btn-success" >Add album</button></a> 
       <%= render partial: "components/albums"%>
+
     </div>
     <div id="post" class="tab-pane fade " role="tabpanel">
-       <%#= render partial: "components/post"%>
-    </div>
-  </div>
+     <%#= render partial: "components/post"%>
+   </div>
+ </div>
 </div>
 

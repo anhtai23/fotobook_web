@@ -1,6 +1,5 @@
-<%= form_for @photo, url: photos_path, remote: true do |f| %>
-<div class="hidden" id="add1photo">
-  <div class="form-group ">
+<%= form_for @photo, url: photos_path, remote: true  do |f| %>
+  <div class="form-group">
     <%= f.label :Title%>
     <%= f.text_field :title %>
   </div>
@@ -23,6 +22,5 @@
   <div class="text-center">
     <%= f.submit 'Create Photo', class: 'btn btn-primary' %>
   </div>
-</div>
 <% end %>
 

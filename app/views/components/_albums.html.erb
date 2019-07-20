@@ -1,34 +1,22 @@
-<div class='form-upload'>
+<div class='form-upload hidden' id="add1-album">
   <%= render 'album_form' %>
 </div>
-
-
 <div class="site-wrap">
-
-  <div class="site-mobile-menu">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close mt-3">
-        <span class="icon-close2 js-menu-toggle"></span>
-      </div>
-    </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
   <div class="container-fluid photos">
     <div class="row align-items-stretch">
-
-      <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+      <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_4.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
-              <h3 class="heading">Photos Title Here</h3>
-              <span class="meta">42 Photos</span>
+              <h3 class="heading"><%= current_user.albums[13].title %></h3>
+              <span class="meta"><%= current_user.albums[13].photos.size %> Photos</span>
             </div>
           </div>
         </a>
       </div>
-      <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+      <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_5.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -38,9 +26,8 @@
           </div>
         </a>
       </div>
-
       <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_1.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <h3 class="heading">Photos Title Here</h3>
@@ -49,7 +36,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_2.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -60,7 +47,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_3.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -70,11 +57,8 @@
           </div>
         </a>
       </div>
-
-
-
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_6.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -85,7 +69,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_7.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -95,10 +79,8 @@
           </div>
         </a>
       </div>
-
-
       <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_8.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -109,7 +91,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_9.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -120,7 +102,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_10.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -130,10 +112,8 @@
           </div>
         </a>
       </div>
-
-
       <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_1.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -144,7 +124,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_2.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -155,7 +135,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_3.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -165,9 +145,8 @@
           </div>
         </a>
       </div>
-
       <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_4.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -178,7 +157,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_5.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -188,9 +167,8 @@
           </div>
         </a>
       </div>
-
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_6.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -201,7 +179,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_7.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -211,10 +189,8 @@
           </div>
         </a>
       </div>
-
-
       <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_8.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -225,7 +201,7 @@
         </a>
       </div>
       <div class="col-6 col-md-6 col-lg-8" data-aos="fade-up" data-aos-delay="100">
-        <a href="<%= album_path(1)%>" class="d-block photo-item">
+        <a href="<%= user_album_path(current_user.id,1)%>" class="d-block photo-item">
           <img src="/assets/img_9.jpg" alt="Image" class="img-fluid">
           <div class="photo-text-more">
             <div class="photo-text-more">
@@ -238,4 +214,5 @@
     </div>
   </div>
 </div>
+
 

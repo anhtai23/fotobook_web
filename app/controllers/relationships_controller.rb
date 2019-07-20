@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+
   def follow_user
     @user = User.find_by(id: params[:id])
     if current_user.follow @user.id
@@ -18,4 +19,5 @@ class RelationshipsController < ApplicationController
       end
     end
   end
+
 end

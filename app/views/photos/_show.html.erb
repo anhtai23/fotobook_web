@@ -1,20 +1,17 @@
 <div class="container">
   <%= render partial: "components/modal_photo"%>
-
-
-
-<div class="post-show row">
-  <div class="col-md-12">
-    <div class="gallery">
-      <%unless @photo.image.file.nil? %>
-      <% else %>
-      <% @photos.each do |p| %>
-          <%= image_tag p.image_url.to_s ,class: "image", data: { toggle: "modal", bigimage: p.image_url.to_s,  target: "#my-modal"} %>
-      <% end %>
-      <% end %>
+  <div class="site-wrap">
+    <div class="container-fluid photos">
+      <div class="row align-items-stretch">
+        <div class="gallery">
+            <% @photos.each do |p| %>
+            <%= image_tag p.image_url.to_s ,class: "image", data: { toggle: "modal", bigimage: p.image.url,  target: "#my-modal"} %>
+          <% end %>
+        </div>
+      </div>
     </div>
+      <%= paginate @photos   %>
   </div>
-
 </div>
 
 
